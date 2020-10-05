@@ -1,0 +1,27 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 34px;
+  margin: 0 auto;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  z-index: 1;
+}
+
+#header a {
+  text-decoration: none;
+}
+
+#header .home {
+  font-family: "Roboto", sans-serif;
+}
+
+#header .home span {
+  color: #d91921;
+}

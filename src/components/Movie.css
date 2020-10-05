@@ -1,0 +1,134 @@
+.movies {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie {
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+.movie > ul > li {
+  backface-visibility: hidden;
+  transition: 0.5s;
+}
+
+.movie li.movie-Card__front img {
+  display: block;
+  width: 100%;
+}
+
+.movie li.movie-Card__back {
+  padding: 24px 20px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.movie li.movie-Card__back .movie__title {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.movie li.movie-Card__back .movie__title span {
+  font-size: 18px;
+}
+.movie li.movie-Card__back .movie__genres {
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.movie li.movie-Card__back .movie__genres li {
+  display: inline-block;
+  margin-right: 4px;
+  color: #333;
+}
+.movie li.movie-Card__back .movie__summary {
+  font-size: 18px;
+  line-height: 1.4em;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #111;
+}
+
+#addBtn {
+  color: white;
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.5;
+  margin-bottom: 80px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 4px 16px;
+  outline: none;
+}
+
+#addBtn:active {
+  transform: scale(0.95);
+  opacity: 1;
+}
+
+/*media query*/
+
+@media screen and (min-width: 1450px) {
+  .movie {
+    width: 19%;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+  .movie {
+    width: 24%;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .movie {
+    width: 32%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .movie:hover li.movie-Card__front {
+    transform: rotateY(180deg);
+  }
+  .movie:hover li.movie-Card__back {
+    height: 100%;
+    background-color: white;
+    transform: rotateY(0deg);
+  }
+}
+@media screen and (max-width: 900px) {
+  .movies {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  .movie {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+  .movie li.movie-Card__back .movie__title {
+    font-size: 3vw;
+    margin-bottom: 0px;
+  }
+  .movie li.movie-Card__back .movie__title span {
+    font-size: 2vw;
+  }
+  .movie li.movie-Card__back .movie__genres li {
+    font-size: 2vw;
+  }
+  .movie li.movie-Card__back .movie__summary {
+    font-size: 2.8vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movie li.movie-Card__back {
+    overflow: scroll;
+  }
+}

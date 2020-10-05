@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  margin-top: 30px;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.container .loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .loader .loader__text {
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .container .loader .loader__text {
+    font-size: 10vw;
+  }
+}

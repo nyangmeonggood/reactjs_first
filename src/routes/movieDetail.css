@@ -1,0 +1,156 @@
+.detailPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.detailPage .bg {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  min-width: 120%;
+  height: 100vh;
+  opacity: 0.3;
+  transform: translateX(-45%);
+  animation: bgmove 60s linear infinite alternate;
+}
+
+@keyframes bgmove {
+  from {
+    transform: translateX(-45%) scale(1);
+  }
+  to {
+    transform: translateX(-55%) scale(1.05);
+  }
+}
+
+.detailPage .detailBox {
+  color: white;
+}
+.detailPage .detailBox > ul > li img {
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+.detailPage .detailBox .runtime,
+.detailPage .detailBox .year {
+  font-weight: 300;
+}
+.detailPage .detailBox .runtime::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 0 10px;
+  background-color: white;
+}
+.detailPage .detailBox .genre {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-weight: 300;
+  color: #bbb;
+}
+.detailPage .detailBox .summary {
+  font-weight: 300;
+  line-height: 1.6em;
+  word-break: break-all;
+  padding-top: 30px;
+  border-top: 1px solid white;
+}
+.detailPage .detailBox .genre li:not(:last-child) {
+  margin-right: 8px;
+}
+
+:root {
+  --x: 0;
+  --y: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .detailBox {
+    display: flex;
+    align-items: center;
+  }
+  .detailPage .detailBox {
+    position: absolute;
+    width: calc(100% - 60px);
+    height: calc(100% - 80px);
+    top: 60px;
+    left: 30px;
+    right: 30px;
+  }
+  .detailPage .detailBox > ul {
+    display: flex;
+  }
+  .detailPage .detailBox > ul > li:first-child {
+    width: 50%;
+  }
+  .detailPage .detailBox > ul > li:last-child {
+    padding-left: 30px;
+  }
+  .detailPage .detailBox .title {
+    font-size: 60px;
+    margin-bottom: 14px;
+    line-height: 1.2em;
+  }
+  .detailPage .detailBox .runtime,
+  .detailPage .detailBox .year,
+  .detailPage .detailBox .genre {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+  .detailPage .detailBox .summary {
+    font-size: 20px;
+  }
+  #poster {
+    position: relative;
+    color: white;
+    margin: 0 auto;
+    transform: rotateX(var(--x)) rotateY(var(--y));
+    transition: 0.2s;
+  }
+  #poster,
+  #poster * {
+    transform-style: preserve-3d;
+  }
+}
+@media screen and (max-width: 900px) {
+  .detailPage .detailBox {
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+  .detailPage .detailBox > ul > li img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .detailPage .detailBox > ul > li:last-child {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .detailPage .detailBox .title {
+    font-size: 7.5vw;
+    margin-bottom: 10px;
+    line-height: 1.3em;
+  }
+  .detailPage .detailBox .runtime,
+  .detailPage .detailBox .year,
+  .detailPage .detailBox .genre {
+    font-size: 4vw;
+  }
+
+  .detailPage .detailBox .genre {
+    margin-top: 2px;
+    margin-bottom: 20px;
+  }
+  .detailPage .detailBox .summary {
+    font-size: 5vw;
+  }
+}
